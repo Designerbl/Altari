@@ -1,6 +1,7 @@
 @extends('layouts.altari')
 @section('title')Регистрация@endsection
 
+@section('content')
 <div class="container d-flex justify-content-center align-items-center h-100">
     <div class="card p-4">
 
@@ -31,7 +32,7 @@
             <input type="text" class="form-control" id="Password">
         </div>
 
-        <button type="submit" class="btn btn-primary mb-3">Войти</button>
+        <button type="submit" class="btn btn-primary mb-3">Зарегистрироваться</button>
         <a role="button" href="/" type="button" class="btn btn-outline-primary">Назад</a>
     </div>
 </div>

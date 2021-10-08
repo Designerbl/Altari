@@ -1,6 +1,7 @@
 @extends('layouts.altari')
 @section('title')Авторизация@endsection
 
+@section('content')
 <div class="container d-flex justify-content-center align-items-center h-100">
     <div class="card p-4">
 

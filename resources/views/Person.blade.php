@@ -1,6 +1,7 @@
 @extends('layouts.altari')
 @section('title')Личный кабинет@endsection
 
+@section('content')
 <div class="container">
     <div class="pt-5">
         <div class="card border-success">
