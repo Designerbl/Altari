@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/registration', function () {
+Route::get('/register', function () {
     return view('register');
+});
+
+Route::get('/person', function () {
+    return view('person');
 });
