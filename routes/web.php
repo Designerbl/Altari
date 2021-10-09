@@ -36,3 +36,15 @@ Route::post('/register/submit', function () {
 Route::get('/person', function () {
     return view('person');
 }) ->name('person');
+
+Route::get('/person', function () {
+    return view('person');
+}) ->name('person');
+
+// Админская панель
+Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
+    Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('homeAdmin');
+
+    // Новые категории для админки
+    Route::resource('users', UsersController::class);
+});
