@@ -6,7 +6,9 @@
 @section('content') <!-- Блок кода, который подставляется в основной шаблон через команду yield('content') -->
 <div class="bg-light">
     <div class="container d-flex justify-content-center align-items-center h-100">
-        <div class="card py-4 px-5">
+        
+        <form class="card py-4 px-5" action="{{ route('register-form') }}" method="POST">
+            @csrf
 
             <p class="text-center fw-bold fs-5" >Регистрация</p>
 
@@ -37,10 +39,11 @@
 
             <button type="submit" class="btn btn-primary mb-3">Зарегистрироваться</button>
             <div class="text-center">
-                <a href="/">Назад</a>          
+                <a href="{{route('index')}}">Назад</a>          
             </div>
 
-        </div>
+        </form>
+
     </div>    
 </div>
 

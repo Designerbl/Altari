@@ -15,16 +15,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+}) ->name('index');
 
-Route::get('/login', function () { // Путь к странице, который в дальнейшем понадобится для переходов по ссылкам и кнопкам
+Route::get('/login', function () { // Путь к странице
     return view('login'); // view('название страницы')
-});
+}) ->name('login'); // название функции по которму можно обращаться к этому обработчику
+
+Route::post('/login/submit', function () {
+    return view('person');
+}) ->name('login-form');
 
 Route::get('/register', function () {
     return view('register');
-});
+}) ->name('register');
+
+Route::post('/register/submit', function () {
+    return view('login');
+}) ->name('register-form');
 
 Route::get('/person', function () {
     return view('person');
-});
+}) ->name('person');
