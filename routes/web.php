@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('index');
+});
+
+Route::get('/login', function () { // Путь к странице, который в дальнейшем понадобится для переходов по ссылкам и кнопкам
+    return view('login'); // view('название страницы')
 });
 
 Route::get('/register', function () {
