@@ -12,7 +12,7 @@
     <div class="p-5 my-4 bg-light rounded-3">
         <h5 class="card-title">Какой-то заголовок</h5>
         <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa animi ipsam debitis nostrum est provident cumque. Debitis deserunt aspernatur totam beatae, reiciendis, est quis ab quas nostrum numquam natus atque.</p>
-        <a href="#" class="btn btn-primary px-3">Подрбнее</a>
+        <a href="#" class="btn btn-primary px-3">Подробнее</a>
     </div>
     
     @include('inc.footer') <!-- Вставляется блок footer -->
