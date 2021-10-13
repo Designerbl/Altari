@@ -14,11 +14,10 @@ class CreateUserTasksTable extends Migration
     public function up()
     {
         Schema::create('user_tasks', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('options_id');
-            $table->integer('processing_status_id');
+            $table->id();
+            $table->foreignId('processing_status_id')->constrained()->onUpdate('cascade');
             $table->text('description')->nullable();
-            $table->integer('user_id');
+            $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

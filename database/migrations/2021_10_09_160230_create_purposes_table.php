@@ -14,7 +14,7 @@ class CreatePurposesTable extends Migration
     public function up()
     {
         Schema::create('purposes', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('name');
         });
     }

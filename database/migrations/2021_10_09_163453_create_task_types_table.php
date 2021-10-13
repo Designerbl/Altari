@@ -14,7 +14,7 @@ class CreateTaskTypesTable extends Migration
     public function up()
     {
         Schema::create('task_types', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('name');
         });
     }

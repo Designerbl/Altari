@@ -14,7 +14,7 @@ class CreateProcessingStatusesTable extends Migration
     public function up()
     {
         Schema::create('processing_statuses', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('name');
         });
     }
