@@ -15,14 +15,10 @@ class CreateUserTasksTable extends Migration
     {
         Schema::create('user_tasks', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('file_id');
-            $table->integer('task_type_id');
-            $table->integer('purpose_id');
+            $table->integer('options_id');
             $table->integer('processing_status_id');
-            $table->integer('payment_status_id');
-            $table->double('payment_amount')->default(0);
-            $table->integer('user_id');
             $table->text('description')->nullable();
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\UserTask;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,10 +33,6 @@ Route::get('/register', function () {
 Route::post('/register/submit', function () {
     return view('login');
 }) ->name('register-form');
-
-Route::get('/person', function () {
-    return view('person');
-}) ->name('person');
 
 Route::get('/person', function () {
     return view('person');
