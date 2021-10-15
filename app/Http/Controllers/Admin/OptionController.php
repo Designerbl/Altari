@@ -15,7 +15,7 @@ class OptionController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.option.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class OptionController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.option.create');
     }
 
     /**
@@ -36,7 +36,11 @@ class OptionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $new_option = new Option();
+        $new_option -> name = $request->input('name');
+        $new_option -> save();
+
+        return redirect()->back()->withSuccess('Добавление прошло успешно!');
     }
 
     /**

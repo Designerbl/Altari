@@ -124,7 +124,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('options.create') }}" class="nav-link">
-                                        <p>Добавить настрокий задач</p>
+                                        <p>Добавить настройку задачи</p>
                                     </a>
                                 </li>
                             </ul>

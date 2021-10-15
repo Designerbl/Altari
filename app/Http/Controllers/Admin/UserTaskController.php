@@ -15,7 +15,7 @@ class UserTaskController extends Controller
      */
     public function index()
     {
-        //ыыыыы
+        return view('admin.usertask.index');
     }
 
     /**
