@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Option;
 use Illuminate\Http\Request;
+use App\Models\Option;
+use App\Models\TaskType;
+use App\Models\Purpose;
 
 class OptionController extends Controller
 {
@@ -15,7 +17,11 @@ class OptionController extends Controller
      */
     public function index()
     {
-        return view('admin.option.index');
+        $options = Option::get();
+
+        return view('admin.option.index',[
+            'options' => $options
+        ]);
     }
 
     /**
@@ -38,6 +44,8 @@ class OptionController extends Controller
     {
         $new_option = new Option();
         $new_option -> name = $request->input('name');
+        $new_option -> task_type_id = 1;
+        $new_option -> purpose_id = 1;
         $new_option -> save();
 
         return redirect()->back()->withSuccess('Добавление прошло успешно!');

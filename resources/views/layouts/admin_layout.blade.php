@@ -88,6 +88,11 @@
                                         <p>Все пользователи</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('users.create') }}" class="nav-link">
+                                        <p>Добавить пользователя</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                        

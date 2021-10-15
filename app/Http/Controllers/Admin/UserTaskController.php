@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\UserTask;
+use App\Models\ProcessingStatus;
+use App\Models\Option;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserTaskController extends Controller
@@ -15,7 +18,11 @@ class UserTaskController extends Controller
      */
     public function index()
     {
-        return view('admin.usertask.index');
+        $usertasks = UserTask::get();
+
+        return view('admin.usertask.index',[
+            'usertasks' => $usertasks
+        ]);
     }
 
     /**

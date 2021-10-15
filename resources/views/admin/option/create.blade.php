@@ -7,6 +7,7 @@
         <h1 class="m-0">Добавить настройку задачи</h1>
     </div>
 
+    <!-- Сообщение при успешном добавлении -->
     @if (session('success'))
         <div class="alert alert-success" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -21,7 +22,7 @@
             <div class="col-lg-12">
                 <div class="card card-primary">
                
-                    <form>
+                    <form action="{{ route('options.store') }}" method="POST">
                         @csrf
 
                         <div class="card-body">
@@ -39,12 +40,13 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label>Тип задачи</label>
+
                                             <select class="form-control">
-                                            <option>option 1</option>
-                                            <option>option 2</option>
-                                            <option>option 3</option>
-                                            <option>option 4</option>
-                                            <option>option 5</option>
+                                                <option>option 1</option>
+                                                <option>option 2</option>
+                                                <option>option 3</option>
+                                                <option>option 4</option>
+                                                <option>option 5</option>
                                             </select>
                                         </div>
                                     </div>
@@ -55,12 +57,13 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label>Назначение</label>
+                                            
                                             <select class="form-control">
-                                            <option>option 1</option>
-                                            <option>option 2</option>
-                                            <option>option 3</option>
-                                            <option>option 4</option>
-                                            <option>option 5</option>
+                                                <option>option 1</option>
+                                                <option>option 2</option>
+                                                <option>option 3</option>
+                                                <option>option 4</option>
+                                                <option>option 5</option>
                                             </select>
                                         </div>
                                     </div>
@@ -70,6 +73,7 @@
 
                         </div>
       
+                        <!-- Кнопка добавить -->
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Добавить</button>
                         </div>
