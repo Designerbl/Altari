@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\OptionController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\UserTaskController;
 use App\Models\UserTask;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -23,5 +26,7 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\HomeAdminController::class, 'index'])->name('homeAdmin');
 
     // Новые категории для админки
-    Route::resource('users', UsersController::class);
+    Route::resource('users', UserController::class);
+    Route::resource('usertasks', UserTaskController::class);
+    Route::resource('options', OptionController::class);
 });

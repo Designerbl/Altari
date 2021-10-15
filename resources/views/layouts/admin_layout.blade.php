@@ -69,8 +69,8 @@
                         
                         <li class="nav-item">
                             <a href=" {{ route('homeAdmin') }}" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
-                            <p>Главная страница</p>
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>Главная страница</p>
                             </a>
                         </li>
 
@@ -84,14 +84,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="./index.html" class="nav-link">
+                                    <a href="{{ route('users.index') }}" class="nav-link">
                                         <p>Все пользователи</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-
-                        
+                       
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-calendar-check"></i>
@@ -102,17 +101,37 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="./index.html" class="nav-link">
+                                    <a href="{{ route('usertasks.index') }}" class="nav-link">
                                         <p>Все задачи</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-cog"></i>
+                                <p>
+                                    Настройки задач
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('options.index') }}" class="nav-link">
+                                        <p>Все настройки задач</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('options.create') }}" class="nav-link">
+                                        <p>Добавить настрокий задач</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                     </ul>
                 </nav>
-            <!-- /.sidebar-menu -->
             </div>
-            <!-- /.sidebar -->
         </aside>
 
         <!-- Контент страницы -->

@@ -1,5 +1,5 @@
 @extends('layouts.admin_layout')
-@section('title')Altari - админ-панель@endsection
+@section('title')Админ-панель - главная страница@endsection
 
 @section('content')
 
