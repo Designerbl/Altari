@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+
+    use RegistersUsers;
     /**
      * Display a listing of the resource.
      *
