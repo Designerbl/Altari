@@ -64,7 +64,7 @@
 
                             <!-- Пункты выпадающего списка -->
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Задачи</a></li>
+                                <li><a class="dropdown-item" href="{{ route('home') }}">Задачи</a></li>
                                 <li>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Выход') }}
