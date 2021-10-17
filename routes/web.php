@@ -14,6 +14,8 @@ Route::get('/', function () {// Путь к странице
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home/create', [App\Http\Controllers\HomeController::class, 'create'])->name('create');
+Route::post('/home/create/add', [App\Http\Controllers\HomeController::class, 'add'])->name('add');
 
 // // Админская панель
 // Route::group(['middleware' => ['role:admin']], function () {

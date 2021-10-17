@@ -1,22 +1,24 @@
-<!-- Личный кабинет пользователя в который он сможет попасть после авторизации и увидеть список задач по работе с файлами выгрузки (таблицу) -->
-
-@extends('layouts.app') <!-- Наследование кода от основного шаблона с мета данными и прочим -->
+@extends('layouts.app')
 @section('title')Личный кабинет@endsection
 
-@section('content') <!-- Блок кода, который подставляется в основной шаблон через команду yield('content') -->
+@section('content')
 
 
 <section class="content">
     <div class="container">
 
-        <h1 class="fs-2 pb-2">Все задачи</h1>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <h1 class="fs-3">Все задачи</h1>                     
+            <a class="btn btn-primary" href="{{ route('create') }}" role="button">Добавить</a>             
+        </div>
+
 
         <div class="card">
 
             <div class="card-body p-0">
                 <table class="table m-0">
                     <!-- Заголовки столбцов -->  
-                    <thead>
+                    <thead class="table-light">
                         <tr>
                             <th style="width: 1%">
                                 №
@@ -36,10 +38,13 @@
                     <!-- Наполнение таблицы -->
                     <tbody>
                         @foreach ($usertasks as $usertask)
+                        
                             <tr>
-                                <!-- ID -->
+                                
+                                <!-- № задачи -->
                                 <td>
-                                    {{ $usertask['id']}}
+                                    {{-- {{ $usertask['id']}} --}}
+                                    {{ $i = $i + 1 }} 
                                 </td>
 
                                 <!-- Задача -->
@@ -49,11 +54,15 @@
                                     </a>
                                     <br>
                                     <small>
-                                        {{ $usertask['created_at']}}
+                                        {{ $usertask['created_at'] }}
                                     </small>
                                 </td>
                                 <td>
+                                    @if ($usertask['processing_status_id'] == 2)
+                                    <p class="text-success">{{ $usertask->processing_status['name']}}</p>
+                                    @else
                                     {{ $usertask->processing_status['name']}}
+                                    @endif
                                 </td>
 
                                 <!-- Комментарий -->
@@ -61,9 +70,9 @@
                                     {{ $usertask['description']}}
                                 </td>
 
-                            </tr>                            
+                            </tr>
+                        
                         @endforeach
-
 
                     </tbody>
                 </table>

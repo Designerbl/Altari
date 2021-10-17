@@ -3,8 +3,18 @@
 
 @section('content')
 <div class="content-header">
-    <div class="container-fluid">  
+    <div class="container-fluid d-flex justify-content-between align-items-center">  
         <h1 class="m-0">Все задачи</h1>
+
+        <div class="input-group input-group-sm" style="width: 150px;">
+            <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-default">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+        </div>
     </div>
 </div>
 
