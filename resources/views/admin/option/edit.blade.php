@@ -1,10 +1,10 @@
 @extends('layouts.admin_layout')
-@section('title')Админ-панель - создание настройки для задачи@endsection
+@section('title')Админ-панель - редактирование настроеки для задачи@endsection
 
 @section('content')
 <div class="content-header">
     <div class="container-fluid">  
-        <h1 class="m-0">Добавить настройку задачи</h1>
+        <h1 class="m-0">Редактирование: {{ $option['name'] }}</h1>
     </div>
 
     <!-- Сообщение при успешном добавлении -->
@@ -22,15 +22,15 @@
             <div class="col-lg-12">
                 <div class="card card-primary">
                
-                    <form action="{{ route('options.store') }}" method="POST">
+                    <form action="{{ route('options.update', $option['id']) }}" method="POST">
                         @csrf
-
+                        @method('PUT')
                         <div class="card-body">
                         
                             <!-- Поле наименование -->
                             <div class="form-group">
                                 <label label for="exampleInputNameOption">Наименование</label>
-                                <input type="text" name="name" class="form-control" id="exampleInputNameOption" required maxlength="40" minlength="4">
+                                <input type="text" name="name" value="{{ $option['name'] }}" class="form-control" id="exampleInputNameOption" required maxlength="40" minlength="4">
                             </div>
 
                             <div class="row">
@@ -44,9 +44,6 @@
                                             <select class="form-control">
                                                 <option>option 1</option>
                                                 <option>option 2</option>
-                                                <option>option 3</option>
-                                                <option>option 4</option>
-                                                <option>option 5</option>
                                             </select>
                                         </div>
                                     </div>
@@ -61,9 +58,6 @@
                                             <select class="form-control">
                                                 <option>option 1</option>
                                                 <option>option 2</option>
-                                                <option>option 3</option>
-                                                <option>option 4</option>
-                                                <option>option 5</option>
                                             </select>
                                         </div>
                                     </div>
@@ -75,7 +69,7 @@
       
                         <!-- Кнопка добавить -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Добавить</button>
+                            <button type="submit" class="btn btn-primary">Сохранить</button>
                         </div>
                     </form>
                   </div>

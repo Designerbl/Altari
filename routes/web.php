@@ -27,6 +27,6 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
 
     // Новые категории для админки
     Route::resource('users', UserController::class);
-    Route::resource('usertasks', UserTaskController::class);
+    Route::resource('userTasks', UserTaskController::class);
     Route::resource('options', OptionController::class);
 });

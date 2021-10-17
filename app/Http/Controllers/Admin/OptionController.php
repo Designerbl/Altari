@@ -70,7 +70,9 @@ class OptionController extends Controller
      */
     public function edit(Option $option)
     {
-        //
+        return view('admin.option.edit',[
+            'option' => $option
+        ]);
     }
 
     /**
@@ -82,7 +84,10 @@ class OptionController extends Controller
      */
     public function update(Request $request, Option $option)
     {
-        //
+        $option->name = $request->name;
+
+        $option -> save();
+        return redirect()->back()->withSuccess('Редакирование прошло успешно!');
     }
 
     /**
@@ -93,6 +98,7 @@ class OptionController extends Controller
      */
     public function destroy(Option $option)
     {
-        //
+        $option->delete();
+        return redirect()->back()->withSuccess('Удаление прошло успешно!');
     }
 }

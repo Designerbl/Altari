@@ -67,14 +67,19 @@
                                 <td class="project-actions text-right">
 
                                     <!-- Кнопка редактировать -->
-                                    <a class="btn btn-info btn-sm" href="#">
-                                        <i class="fas fa-pencil-alt"></i>
+                                    <a class="btn btn-warning btn-sm" href="#">
+                                        <i class="fas fa-ban"></i>
                                     </a>
 
                                     <!-- Кнопка удалить -->
-                                    <a class="btn btn-danger btn-sm" href="#">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
+                                    <!-- Кнопка удалить -->
+                                    <form class="d-inline" action="{{ route('users.destroy', $user['id']) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm delete-btn" href="#">
+                                            <i class="fas fa-trash"></i>
+                                        </button>                                        
+                                    </form>
                                 </td>
                             </tr>                            
                         @endforeach

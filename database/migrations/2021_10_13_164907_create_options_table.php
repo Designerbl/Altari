@@ -24,7 +24,7 @@ class CreateOptionsTable extends Migration
         // Добавление в таблицу user_task строки с option_id
         // Прописывается тут потому, что таблица user_task создается раньше options и из-за этого возникает ошибка 
         Schema::table('user_tasks', function(Blueprint $table) {
-            $table->foreignId('option_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('option_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

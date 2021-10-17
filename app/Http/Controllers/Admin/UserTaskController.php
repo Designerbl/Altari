@@ -88,6 +88,7 @@ class UserTaskController extends Controller
      */
     public function destroy(UserTask $userTask)
     {
-        //
+        $userTask->delete();
+        return redirect()->back()->withSuccess('Удаление прошло успешно!');
     }
 }
