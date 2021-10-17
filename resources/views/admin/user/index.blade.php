@@ -55,7 +55,7 @@
                                     </small>
                                 </td>
                                 <td>
-                                    Какая-то роль
+                                    {{$user->getRoleNames()}}
                                 </td>
 
                                 <!-- Почта -->
@@ -66,17 +66,37 @@
                                 <!-- Кнопки взаимодействий -->
                                 <td class="project-actions text-right">
 
-                                    <!-- Кнопка редактировать -->
-                                    <a class="btn btn-warning btn-sm" href="#">
-                                        <i class="fas fa-ban"></i>
-                                    </a>
+                                    <!-- Кнопка блокировки -->
+                                    <form class="d-inline" action="{{ route('users.update', $user['id']) }}" method="POST">
+                                        @csrf
+                                        @method('PUT')
 
-                                    <!-- Кнопка удалить -->
+                                        @if ($user->hasRole('admin'))
+                                            <button class="btn btn-warning btn-sm " href="#" disabled>
+                                                <i class="fas fa-ban"></i>
+                                            </button> 
+                                        @else   
+                                            @if ($user->hasRole('user'))
+                                                <button class="btn btn-warning btn-sm" href="#">
+                                                    <i class="fas fa-ban"></i>
+                                                </button>                                            
+                                            @else
+                                            <button class="btn btn-success btn-sm" href="#">
+                                                <i class="fas fa-check"></i>
+                                            </button> 
+                                            @endif                                               
+
+                                        @endif
+
+                                    </form>
+
+
+
                                     <!-- Кнопка удалить -->
                                     <form class="d-inline" action="{{ route('users.destroy', $user['id']) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm delete-btn" href="#">
+                                        <button type="submit" class="btn btn-danger btn-sm delete-btn">
                                             <i class="fas fa-trash"></i>
                                         </button>                                        
                                     </form>

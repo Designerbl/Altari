@@ -50,7 +50,7 @@
                                 <!-- Задача -->
                                 <td>
                                     <a>
-                                        {{ $usertask['option_id']}}
+                                        {{ $usertask->option['name']}}
                                     </a>
                                     <br>
                                     <small>
@@ -58,12 +58,12 @@
                                     </small>
                                 </td>
                                 <td>
-                                    {{ $usertask['processing_status_id']}}
+                                    {{ $usertask->processing_status['name']}}
                                 </td>
 
                                 <!-- Пользователь -->
                                 <td>
-                                    {{ $usertask['user_id']}}
+                                    {{ $usertask->user['name']}}
                                 </td>
 
                                 <!-- Комментарий -->
@@ -75,9 +75,21 @@
                                 <td class="project-actions text-right">
 
                                     <!-- Кнопка редактировать -->
-                                    <a class="btn btn-success btn-sm" href="#">
-                                        <i class="fas fa-check"></i>
-                                    </a>
+
+                                    <form class="d-inline" action="{{ route('userTasks.update', $usertask['id']) }}" method="POST">
+                                        @csrf
+                                        @method('PUT')
+                                        @if ($usertask['processing_status_id'] == 1)
+                                            <button class="btn btn-success btn-sm" href="#">
+                                                <i class="fas fa-check"></i>
+                                            </button>                                            
+                                        @else
+                                        <button class="btn btn-warning btn-sm" href="#">
+                                            <i class="fas fa-clock"></i>
+                                        </button> 
+                                        @endif
+                                    </form>
+
 
                                     <!-- Кнопка удалить -->
                                     <form class="d-inline" action="{{ route('userTasks.destroy', $usertask['id']) }}" method="POST">

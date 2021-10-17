@@ -9,8 +9,18 @@ class UserTask extends Model
 {
     use HasFactory;
 
-    public function file()
+    public function option()
     {
-        return $this->hasMany(TaskType::class, 'task_type_id', 'id');
+        return $this->belongsTo(Option::class);
+    }
+
+    public function processing_status()
+    {
+        return $this->belongsTo(ProcessingStatus::class);
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

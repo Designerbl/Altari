@@ -18,9 +18,13 @@ class OptionController extends Controller
     public function index()
     {
         $options = Option::get();
+        $tasktype = TaskType::get();
+        $purpose = Purpose::get();
 
         return view('admin.option.index',[
-            'options' => $options
+            'options' => $options,
+            'tasktypes' => $tasktype,
+            'purposes' => $purpose
         ]);
     }
 
@@ -31,7 +35,13 @@ class OptionController extends Controller
      */
     public function create()
     {
-        return view('admin.option.create');
+        $tasktypes = TaskType::get();
+        $purposes = Purpose::get();
+
+        return view('admin.option.create',[
+            'tasktypes' => $tasktypes,
+            'purposes' => $purposes
+        ]);
     }
 
     /**
@@ -44,8 +54,8 @@ class OptionController extends Controller
     {
         $new_option = new Option();
         $new_option -> name = $request->input('name');
-        $new_option -> task_type_id = 1;
-        $new_option -> purpose_id = 1;
+        $new_option -> task_type_id = $request->task_type_id;
+        $new_option -> purpose_id = $request->purpose_id;
         $new_option -> save();
 
         return redirect()->back()->withSuccess('Добавление прошло успешно!');
@@ -70,8 +80,13 @@ class OptionController extends Controller
      */
     public function edit(Option $option)
     {
+        $tasktypes = TaskType::get();
+        $purposes = Purpose::get();
+
         return view('admin.option.edit',[
-            'option' => $option
+            'option' => $option,
+            'tasktypes' => $tasktypes,
+            'purposes' => $purposes
         ]);
     }
 
@@ -84,7 +99,9 @@ class OptionController extends Controller
      */
     public function update(Request $request, Option $option)
     {
-        $option->name = $request->name;
+        $option ->name = $request->name;
+        $option -> task_type_id = $request->task_type_id;
+        $option -> purpose_id = $request->purpose_id;
 
         $option -> save();
         return redirect()->back()->withSuccess('Редакирование прошло успешно!');

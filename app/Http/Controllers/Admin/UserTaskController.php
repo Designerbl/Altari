@@ -19,9 +19,15 @@ class UserTaskController extends Controller
     public function index()
     {
         $usertasks = UserTask::get();
+        $option = Option::get();
+        $processing_status = ProcessingStatus::get();
+        $user = User::get();
 
         return view('admin.usertask.index',[
-            'usertasks' => $usertasks
+            'usertasks' => $usertasks,
+            'option' => $option,
+            'processing_status' => $processing_status,
+            'user' => $user
         ]);
     }
 
@@ -77,7 +83,16 @@ class UserTaskController extends Controller
      */
     public function update(Request $request, UserTask $userTask)
     {
-        //
+        if($userTask -> processing_status_id == 1){
+          $userTask -> processing_status_id = 2;
+          $userTask -> save();  
+        } else {
+            $userTask -> processing_status_id = 1;
+            $userTask -> save();  
+        }
+        
+        $userTask -> save();
+        return redirect()->back();
     }
 
     /**

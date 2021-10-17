@@ -30,7 +30,7 @@
                             <!-- Поле наименование -->
                             <div class="form-group">
                                 <label label for="exampleInputNameOption">Наименование</label>
-                                <input type="text" name="name" class="form-control" id="exampleInputNameOption" required maxlength="40" minlength="4">
+                                <input type="text" name="name" class="form-control" id="exampleInputNameOption" required maxlength="40" minlength="4" placeholder="Введите название для новой настроки задачи">
                             </div>
 
                             <div class="row">
@@ -41,12 +41,10 @@
                                         <div class="form-group">
                                             <label>Тип задачи</label>
 
-                                            <select class="form-control">
-                                                <option>option 1</option>
-                                                <option>option 2</option>
-                                                <option>option 3</option>
-                                                <option>option 4</option>
-                                                <option>option 5</option>
+                                            <select name="task_type_id" class="form-control">
+                                                @foreach ($tasktypes as $tasktype)
+                                                    <option value="{{ $tasktype['id'] }}" >{{ $tasktype['name'] }}</option>                                                    
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -58,12 +56,10 @@
                                         <div class="form-group">
                                             <label>Назначение</label>
                                             
-                                            <select class="form-control">
-                                                <option>option 1</option>
-                                                <option>option 2</option>
-                                                <option>option 3</option>
-                                                <option>option 4</option>
-                                                <option>option 5</option>
+                                            <select name="purpose_id" class="form-control">
+                                                @foreach ($purposes as $purpose)
+                                                    <option value="{{ $purpose['id'] }}">{{ $purpose['name'] }}</option>                                                    
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>

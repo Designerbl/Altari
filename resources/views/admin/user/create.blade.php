@@ -30,26 +30,26 @@
                             <!-- Поле имя -->
                             <div class="form-group">
                                 <label label for="exampleInputNameOption">Имя</label>
-                                <input type="text" name="name" class="form-control" id="exampleInputNameOption" required>
+                                <input type="text" name="name" class="form-control" id="exampleInputNameOption" placeholder="Введите имя для нового пользователя"  required>
                             </div>
 
                             <!-- Поле почта -->
                             <div class="form-group">
                                 <label label for="exampleInputNameOption">Почта</label>
-                                <input type="text" name="email" class="form-control" id="exampleInputNameOption" required>
+                                <input type="text" name="email" class="form-control" id="exampleInputNameOption" placeholder="Введите почту для нового пользователя" required>
                             </div>
 
                             <!-- Поле пароль -->
                             <div class="form-group">
                                 <label label for="exampleInputNameOption">Пароль</label>
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Введите пароль для нового пользователя">
                             </div>
 
     
                             <!-- Поле ввода Повторите пароль -->
                             <div class="form-group">
                                 <label label for="exampleInputNameOption">Повторный пароль</label>
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Повторите пароль для нового пользователя">
                             </div>
 
                         </div>

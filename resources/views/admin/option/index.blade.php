@@ -64,12 +64,12 @@
 
                                 <!-- Тип задачи -->
                                 <td>
-                                    {{ $option['task_type_id']}}
+                                    {{ $option->task_type['name']}}
                                 </td>
 
                                 <!-- Назначение -->
                                 <td>
-                                    {{ $option['purpose_id']}}
+                                    {{ $option->purpose['name']}}
                                 </td>
 
                                 <!-- Кнопки взаимодействий -->

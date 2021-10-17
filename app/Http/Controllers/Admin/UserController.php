@@ -89,7 +89,19 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+
+        if ($user->hasRole('user'))
+        {
+            $user->removeRole('user');
+            $user->assignRole('blocked'); 
+        }
+        else
+        {
+            $user->removeRole('blocked');
+            $user->assignRole('user');          
+        } 
+        $user -> save();    
+        return redirect()->back();
     }
 
     /**
