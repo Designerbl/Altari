@@ -32,9 +32,9 @@
                         <div class="form-group pb-3">
                             <label>Выбор настройки</label>
 
-                            <select name="option_id" class="form-select">
-                                @foreach ($options as $option)
-                                    <option value="{{ $option['id'] }}" >{{ $option['name'] }}</option>                                                    
+                            <select name="mode_id" class="form-select">
+                                @foreach ($modes as $mode)
+                                    <option value="{{ $mode['id'] }}" >{{ $mode['name'] }}</option>                                                    
                                 @endforeach
                             </select>
                         </div>                         

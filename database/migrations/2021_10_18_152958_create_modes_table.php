@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePurposesTable extends Migration
+class CreateModesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreatePurposesTable extends Migration
      */
     public function up()
     {
-        Schema::create('purposes', function (Blueprint $table) {
+        Schema::create('modes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+        });
+
+        Schema::table('user_tasks', function(Blueprint $table) {
+            $table->foreignId('mode_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -26,6 +30,6 @@ class CreatePurposesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('purposes');
+        Schema::dropIfExists('modes');
     }
 }

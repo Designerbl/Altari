@@ -50,7 +50,7 @@
                                 <!-- Задача -->
                                 <td>
                                     <a>
-                                        {{ $usertask->option['name']}}
+                                        {{ $usertask->mode['name']}}
                                     </a>
                                     <br>
                                     <small>

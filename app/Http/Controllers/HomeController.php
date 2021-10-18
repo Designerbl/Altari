@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Option;
+use App\Models\Mode;
 use App\Models\PaymentStatus;
 use App\Models\ProcessingStatus;
 use App\Models\Purpose;
@@ -36,13 +36,13 @@ class HomeController extends Controller
         $usertasks = UserTask::where('user_id', Auth::user()->id)->get();
         $task_counter = UserTask::where('user_id', Auth::user()->id)->count();
 
-        $option = Option::get();
+        $mode = Mode::get();
         $processing_status = ProcessingStatus::get();
         $user = User::get();
 
         return view('home',[
             'usertasks' => $usertasks,
-            'option' => $option,
+            'mode' => $mode,
             'processing_status' => $processing_status,
             'user' => $user,
             'task_counter' => $task_counter,
@@ -52,13 +52,13 @@ class HomeController extends Controller
 
     public function create(){
 
-        $options = Option::get();
+        $modes = Mode::get();
         $users = User::get();
         $processing_statuses = ProcessingStatus::get();
 
         return view('create',[
             'users' => $users,
-            'options' => $options,
+            'modes' => $modes,
             'processing_statuses' => $processing_statuses
         ]);
     }
@@ -76,7 +76,7 @@ class HomeController extends Controller
         $new_usertask -> description = $request->input('description');
         $new_usertask -> processing_status_id = 1;
         $new_usertask -> user_id = Auth::user()->id;
-        $new_usertask -> option_id = $request->option_id;
+        $new_usertask -> mode_id = $request->mode_id;
 
        $new_usertask -> save();
 

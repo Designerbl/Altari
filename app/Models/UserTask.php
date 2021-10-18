@@ -9,9 +9,9 @@ class UserTask extends Model
 {
     use HasFactory;
 
-    public function option()
+    public function mode()
     {
-        return $this->belongsTo(Option::class);
+        return $this->belongsTo(Mode::class);
     }
 
     public function processing_status()
