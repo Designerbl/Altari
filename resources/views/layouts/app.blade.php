@@ -19,7 +19,7 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
-    
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -43,9 +43,32 @@
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Аунтефикация -->
-
-                        <!-- Если пользователь гость, то отображаются две кнопки Авторизация и регистрация -->
                         @guest
+
+                            <form method="POST" action="{{ route('login') }}">
+                                @csrf
+
+                                <div class="row g-2">
+
+                                    <!-- Поле ввода почты -->
+                                    <div class="col-5">
+                                        <input id="email" type="email" class="form-control form-control-sm @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Введите почту">
+                                    </div>
+
+                                    <!-- Поле ввода пароля -->
+                                    <div class="col-5">
+                                        <input id="password" type="password" class="form-control form-control-sm @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Введите пароль">
+                                    </div>
+
+                                    <!-- Кнопка авторизации -->
+                                    <div class="col-2">
+                                        <button type="submit" class="btn btn-primary btn-sm">Войти</button>
+                                    </div>
+                                </div>                            
+                            </form>
+
+
+                            {{-- 
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Авторизация') }}</a>
@@ -56,8 +79,10 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Регистрация') }}</a>
                                 </li>
-                            @endif
+                            @endif --}}
+
                         @else <!-- Иначе появляется выпадающий список именем -->
+                        
                         <li class="nav-item dropdown">
 
                             <!-- Отображение имени авторизированного пользователя -->

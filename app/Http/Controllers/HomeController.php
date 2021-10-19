@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mode;
-use App\Models\PaymentStatus;
 use App\Models\ProcessingStatus;
-use App\Models\Purpose;
-use App\Models\TaskType;
 use App\Models\UserTask;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -31,8 +28,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $i=0;
+
         $usertasks = UserTask::where('user_id', Auth::user()->id)->get();
         $task_counter = UserTask::where('user_id', Auth::user()->id)->count();
 
