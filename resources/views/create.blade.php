@@ -47,10 +47,10 @@
                    
                 </div>
 
-                <!-- Поле наименование -->
+                <!-- Поле комментария -->
                 <div class="form-group pb-3">
                     <label label for="exampleInputNameOption">Комментарий</label>
-                    <textarea style="min-height: 84px; max-height: 126px;" type="text" name="description" class="form-control" id="exampleInputNameOption" maxlength="320" placeholder="Необязательное поле"></textarea>
+                    <textarea style="min-height: 84px; max-height: 84px;" type="text" name="description" class="form-control" id="exampleInputNameOption" maxlength="150" placeholder="Необязательное поле"></textarea>
                 </div>
 
                 <!-- Кнопка добавить -->

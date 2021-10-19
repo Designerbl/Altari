@@ -16,7 +16,7 @@
         <div class="card">
 
             <div class="card-body p-0">
-                <table class="table m-0">
+                <table class="table align-middle m-0">
                     <!-- Заголовки столбцов -->  
                     <thead class="table-light">
                         <tr>
@@ -31,6 +31,8 @@
                             </th>
                             <th style="width: 40%">
                                 Комментарий
+                            </th>
+                            <th style="width: 5%">
                             </th>
                         </tr>
                     </thead>
@@ -68,6 +70,12 @@
                                 <!-- Комментарий -->
                                 <td>
                                     {{ $usertask['description']}}
+                                </td>
+
+                                <td>                                    
+                                    <a class="btn btn-success btn-sm" href="{{ route('edit', $usertask['id']) }}">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
                                 </td>
 
                             </tr>
