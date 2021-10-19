@@ -73,7 +73,7 @@
                                 </td>
 
                                 <td>                                    
-                                    <a class="btn btn-success btn-sm" href="{{ route('edit', $usertask['id']) }}">
+                                    <a class="btn btn-success btn-sm" href="#">
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>
                                 </td>
