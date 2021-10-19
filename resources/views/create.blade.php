@@ -6,7 +6,11 @@
 
 <div class="container">
     
-    <h1 class="fs-3 mb-2">Добавление новой задачи</h1>  
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <h1 class="fs-3">Добавление новой задачи</h1>                     
+        <a class="btn btn-outline-primary" href="{{ route('home') }}" role="button">Назад</a>             
+    </div>
+
     
         <!-- Сообщение при успешном добавлении -->
     @if (session('success'))

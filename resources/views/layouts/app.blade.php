@@ -67,7 +67,6 @@
                                 </div>                            
                             </form>
 
-
                             {{-- 
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -82,17 +81,18 @@
                             @endif --}}
 
                         @else <!-- Иначе появляется выпадающий список именем -->
-                        
+
+                        <a class="nav-link nav-item" href="{{ route('home') }}">Задачи</a>   
                         <li class="nav-item dropdown">
 
                             <!-- Отображение имени авторизированного пользователя -->
+                                                    
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 {{ Auth::user()->name }}
                             </a>
-
+                            
                             <!-- Пункты выпадающего списка -->
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="{{ route('home') }}">Задачи</a></li>
+                            <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                                 <li>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Выход') }}
@@ -102,6 +102,7 @@
                                     @csrf
                                 </form>
                             </ul>
+                            
                         </li>
                         @endguest
                     </ul>
