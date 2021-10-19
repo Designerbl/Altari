@@ -82,7 +82,12 @@
 
                         @else <!-- Иначе появляется выпадающий список именем -->
 
-                        <a class="nav-link nav-item" href="{{ route('home') }}">Задачи</a>   
+                        @if (Auth::user()->hasRole('user'))
+                            <a class="nav-link nav-item" href="{{ route('homeUser') }}">Задачи</a> 
+                        @else
+                            <a class="nav-link nav-item" href="{{ route('homeAdmin') }}">Админ-панель</a>                     
+                        @endif
+
                         <li class="nav-item dropdown">
 
                             <!-- Отображение имени авторизированного пользователя -->

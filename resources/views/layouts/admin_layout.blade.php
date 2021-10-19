@@ -21,12 +21,21 @@
     <div class="wrapper">
 
         <!-- Навигационная панель -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-              </li>
-            </ul>
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light d-flex justify-content-between">
+        
+                <a class="nav-link d-inline" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+
+            <!-- Кнопка выйти -->
+            <div class="pr-4">
+                <a class="btn btn-primary mr-1" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    {{ __('Выход') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>           
+            </div>
+
         </nav>
 
         <!-- Боковая панель -->

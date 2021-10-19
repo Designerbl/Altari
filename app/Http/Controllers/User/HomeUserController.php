@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Mode;
 use App\Models\ProcessingStatus;
@@ -9,23 +10,8 @@ use App\Models\UserTask;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
+class HomeUserController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
         $i=0;
@@ -37,7 +23,7 @@ class HomeController extends Controller
         $processing_status = ProcessingStatus::get();
         $user = User::get();
 
-        return view('home',[
+        return view('user.index',[
             'usertasks' => $usertasks,
             'mode' => $mode,
             'processing_status' => $processing_status,
@@ -46,5 +32,4 @@ class HomeController extends Controller
             'i' => $i
         ]);
     }
-
 }

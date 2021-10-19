@@ -7,8 +7,8 @@
 <div class="container">
     
     <div class="d-flex justify-content-between align-items-center mb-2">
-        <h1 class="fs-3">Добавление новой задачи</h1>                     
-        <a class="btn btn-outline-primary" href="{{ route('home') }}" role="button">Назад</a>             
+        <h1 class="fs-3">Редактирование задачи</h1>                     
+        <a class="btn btn-outline-primary" href="{{ route('homeUser') }}" role="button">Назад</a>             
     </div>
 
     
@@ -20,10 +20,12 @@
     @endif  
     
     <div class="card">
-        <form action="{{ route('add') }}" method="POST">
+        <form action="{{ route('usertasks.update', $usertask['id']) }}" method="POST">
             @csrf
+            @method('PUT')
             <div class="card-body">
-                <div class="row">
+
+                {{-- <div class="row">
                     <div class="col-lg-6">
                         <!-- Поле наименование -->
                         <div class="form-group pb-3">
@@ -32,30 +34,33 @@
                         </div>                        
                     </div>
 
+                    <!-- Выбор режима -->
                     <div class="col-lg-6">
                         <div class="form-group pb-3">
-                            <label>Выбор настройки</label>
+                            <label>Выбор режима</label>
 
                             <select name="mode_id" class="form-select">
                                 @foreach ($modes as $mode)
-                                    <option value="{{ $mode['id'] }}" >{{ $mode['name'] }}</option>                                                    
+                                    <option value="{{ $mode['id'] }}" 
+                                        @if ($mode['id'] == $usertask['mode_id'])
+                                            selected
+                                        @endif>{{ $mode['name'] }}
+                                    </option>                                                     
                                 @endforeach
                             </select>
                         </div>                         
-                    </div>
-                    <!-- Выбор настройки -->
-                   
-                </div>
+                    </div>                 
+                </div> --}}
 
                 <!-- Поле комментария -->
                 <div class="form-group pb-3">
                     <label label for="exampleInputNameOption">Комментарий</label>
-                    <textarea style="min-height: 84px; max-height: 84px;" type="text" name="description" class="form-control" id="exampleInputNameOption" maxlength="150" placeholder="Необязательное поле"></textarea>
+                    <input type="text" value="{{ $usertask['description'] }}" name="description" class="form-control" id="exampleInputNameOption" maxlength="150" placeholder="Необязательное поле"></input>
                 </div>
 
                 <!-- Кнопка добавить -->
                 
-                <button type="submit" class="btn btn-primary">Добавить</button>
+                <button type="submit" class="btn btn-primary">Сохранить</button>
 
             </div>
         </form>

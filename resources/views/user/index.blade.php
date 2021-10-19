@@ -9,7 +9,7 @@
 
         <div class="d-flex justify-content-between align-items-center mb-2">
             <h1 class="fs-3">Все задачи</h1>                     
-            <a class="btn btn-primary" href="{{ route('create') }}" role="button">Добавить</a>             
+            <a class="btn btn-primary" href="{{ route('usertasks.create') }}" role="button">Добавить</a>             
         </div>
 
 
@@ -61,7 +61,7 @@
                                 </td>
                                 <td>
                                     @if ($usertask['processing_status_id'] == 2)
-                                    <p class="text-success">{{ $usertask->processing_status['name']}}</p>
+                                    <p class="text-success m-0">{{ $usertask->processing_status['name']}}</p>
                                     @else
                                     {{ $usertask->processing_status['name']}}
                                     @endif
@@ -73,7 +73,7 @@
                                 </td>
 
                                 <td>                                    
-                                    <a class="btn btn-success btn-sm" href="#">
+                                    <a class="btn btn-outline-success btn-sm" href="{{ route('usertasks.edit', $usertask['id']) }}">
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>
                                 </td>
