@@ -64,7 +64,14 @@
                                     <div class="col-2">
                                         <button type="submit" class="btn btn-primary btn-sm">Войти</button>
                                     </div>
-                                </div>                            
+                                </div>
+                                
+                                <div class="form-check pt-1">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                    <label class="form-check-label fs-6" for="remember">Запомнить меня</label>
+                                </div>
+
                             </form>
 
                             {{-- 
@@ -82,10 +89,10 @@
 
                         @else <!-- Иначе появляется выпадающий список именем -->
 
-                        @if (Auth::user()->hasRole('user'))
-                            <a class="nav-link nav-item" href="{{ route('homeUser') }}">Задачи</a> 
-                        @else
-                            <a class="nav-link nav-item" href="{{ route('homeAdmin') }}">Админ-панель</a>                     
+                        @if (Auth::user()->hasRole('admin'))
+                            <a class="nav-link nav-item" href="{{ route('homeAdmin') }}">Админ-панель</a>   
+                        @else   
+                            <a class="nav-link nav-item" href="{{ route('homeUser') }}">Задачи</a>                   
                         @endif
 
                         <li class="nav-item dropdown">
