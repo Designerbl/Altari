@@ -55,7 +55,7 @@
                 <!-- Поле комментария -->
                 <div class="form-group pb-3">
                     <label label for="exampleInputNameOption">Комментарий</label>
-                    <input type="text" value="{{ $usertask['description'] }}" name="description" class="form-control" id="exampleInputNameOption" maxlength="150" placeholder="Необязательное поле"></input>
+                    <input type="text" value="{{ $usertask['description'] }}" name="description" class="form-control" id="exampleInputNameOption" maxlength="150">
                 </div>
 
                 <!-- Кнопка добавить -->
