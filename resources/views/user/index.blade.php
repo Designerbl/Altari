@@ -60,10 +60,14 @@
                                     </small>
                                 </td>
                                 <td>
-                                    @if ($usertask['processing_status_id'] == 2)
-                                    <p class="text-success m-0">{{ $usertask->processing_status['name']}}</p>
+                                    @if ($usertask['processing_status_id'] == 1)
+                                        <p class="text-warning  m-0">{{ $usertask->processing_status['name']}}</p>
                                     @else
-                                    {{ $usertask->processing_status['name']}}
+                                        @if ($usertask['processing_status_id'] == 2)
+                                            <p class="text-primary  m-0">{{ $usertask->processing_status['name']}}</p>
+                                        @else
+                                            <p class="text-success  m-0">{{ $usertask->processing_status['name']}}</p>
+                                        @endif
                                     @endif
                                 </td>
 
@@ -72,14 +76,26 @@
                                     {{ $usertask['description']}}
                                 </td>
 
-                                <td>                                    
-                                    <a class="btn btn-outline-success btn-sm" href="{{ route('usertasks.edit', $usertask['id']) }}">
-                                        <i class="fas fa-pencil-alt"></i>
-                                    </a>
+                                <td>  
+                                    @if ($usertask['processing_status_id'] == 1)
+                                        <button class="btn btn-primary btn-sm" disabled>
+                                            <i class="fas fa-download"></i>
+                                        </button> 
+                                    @else
+                                        @if ($usertask['processing_status_id'] == 2)
+                                            <a class="btn btn-primary btn-sm" href="{{ route('usertasks.edit', $usertask['id']) }}" disabled>
+                                                <i class="fas fa-cog"></i>
+                                            </a> 
+                                        @else
+                                            <a class="btn btn-success btn-sm">
+                                                <i class="fas fa-download"></i>
+                                            </a>                                          
+                                        @endif
+                                          
+                                    @endif                                  
                                 </td>
 
-                            </tr>
-                        
+                            </tr>                      
                         @endforeach
 
                     </tbody>
