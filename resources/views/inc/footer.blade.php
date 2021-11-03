@@ -1,4 +1,4 @@
-<footer class="footer p-5">
+<footer class="footer py-5 ">
     <div class="container ">
         <div class="row align-items-start">
             <div class="col-12 col-lg-9 d-md-flex align-items-center">

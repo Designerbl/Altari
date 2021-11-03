@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container py-5">
     
     <div class="d-flex justify-content-between align-items-center mb-2">
         <h1 class="fs-3">Редактирование задачи</h1>                     

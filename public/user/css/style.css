@@ -29,13 +29,23 @@ li {
   color: #FF0000;
 }
 
-.btn-submit {
+.card-reg {
+  max-width: 600px;
+}
+
+.btn-altari {
   color: #fff;
   background-color: #ff4242;
   border-color: #ff4242;
 }
 
-.btn-primary:hover {
+.btn-primary {
+  color: #fff;
+  background-color: #427eff;
+  border-color: #427eff;
+}
+
+.btn-altari:hover {
   color: #fff;
   background-color: #eb3b3b;
   border-color: #eb3b3b;
@@ -124,17 +134,6 @@ li {
   padding-top: 18px;
   padding-bottom: 60px;
 }
-.carder .btn-reg {
-  background: #ff4242;
-  border-radius: 7px;
-  border: none;
-  color: #FFFFFF;
-  padding: 16px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 24px;
-}
 @media screen and (max-width: 575px) {
   .carder .btn-reg {
     padding: 16px;
@@ -144,6 +143,17 @@ li {
     line-height: 24px;
     margin-top: 60px;
   }
+}
+
+.btn-reg {
+  background: #ff4242;
+  border-radius: 7px;
+  border: none;
+  color: #FFFFFF;
+  padding: 16px 32px;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 @media screen and (max-width: 767px) {

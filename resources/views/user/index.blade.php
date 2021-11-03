@@ -5,15 +5,15 @@
 
 
 <section class="content">
-    <div class="container">
+    <div class="container py-5">
 
         <div class="d-flex justify-content-between align-items-center mb-2">
             <h1 class="fs-3">Все задачи</h1>                     
-            <a class="btn btn-primary" href="{{ route('usertasks.create') }}" role="button">Добавить</a>             
+            <a class="btn btn-altari" href="{{ route('usertasks.create') }}" role="button">Добавить</a>             
         </div>
 
 
-        <div class="card">
+        <div class="card border-0 rounded-3">
 
             <div class="card-body p-0">
                 <table class="table align-middle m-0">
@@ -26,7 +26,7 @@
                             <th >
                                 Задача
                             </th>
-                            <th style="width: 15%">
+                            <th style="width: 20%">
                                 Статус
                             </th>
                             <th style="width: 40%">
@@ -78,7 +78,7 @@
 
                                 <td>  
                                     @if ($usertask['processing_status_id'] == 1)
-                                        <button class="btn btn-primary btn-sm" disabled>
+                                        <button class="btn btn- btn-sm" disabled>
                                             <i class="fas fa-download"></i>
                                         </button> 
                                     @else

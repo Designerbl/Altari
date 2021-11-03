@@ -59,7 +59,7 @@
 
                                     <!-- Кнопка авторизации -->
                                     <div class="col-2">
-                                        <button type="submit" class="btn btn-submit btn-sm">Войти</button>
+                                        <button type="submit" class="btn btn-altari btn-sm">Войти</button>
                                     </div>
                                 </div>
                                 

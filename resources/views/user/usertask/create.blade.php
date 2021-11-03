@@ -4,11 +4,11 @@
 
 @section('content')
 
-<div class="container">
+<div class="container py-5">
     
     <div class="d-flex justify-content-between align-items-center mb-2">
         <h1 class="fs-3">Добавление новой задачи</h1>                     
-        <a class="btn btn-outline-primary" href="{{ route('homeUser') }}" role="button">Назад</a>             
+        <a class="btn btn-outline-dark" href="{{ route('homeUser') }}" role="button">Назад</a>             
     </div>
 
     
@@ -54,7 +54,7 @@
 
                 <!-- Кнопка добавить -->
                 
-                <button type="submit" class="btn btn-primary">Добавить</button>
+                <button type="submit" class="btn btn-altari">Добавить</button>
 
             </div>
         </form>
