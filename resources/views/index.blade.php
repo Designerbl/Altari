@@ -23,14 +23,15 @@
             </div>            
         </div>
 
-        <div class="card p-5">
+        <div class="card carder p-5">
             <div class="card-inner">
                     <h2 class="card-title">1С:Предприятие 8 <br> через Интернет</h2>
-                    <p class="card-text">
+                    <p class="card-text mb-5">
                         Ведите бухгалтерский и&nbsp;налоговый учет, контролируйте бизнес и&nbsp;управляйте&nbsp;им, сдавайте отчетность через Интернет
                         с&nbsp;помощью популярных программ &laquo;1С&raquo;
-                    </p>                            
-                <button class="btn-reg">Зарегистрироваться</button>
+                    </p>
+                                                
+                    <a class="btn-reg" href="{{ route('register') }}">Зарегистрироваться</a>
             </div>
         </div>
 

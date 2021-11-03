@@ -27,10 +27,13 @@
 <body>
     <div id="app">
 
-        <header class="header ">
-            <div class="head container d-md-flex justify-content-md-between align-items-md-center">
+        <!-- Навигационная панель -->
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm header">
+            <div class="container">
+
+                <!-- Логотип -->
                 <a href="{{ url('/') }}"><h1 class="logo"><span class="logo-inner">A</span>ltari</h1></a>
-                
+
                 <div class="" id="navbarSupportedContent">
 
                     <!-- Кнопки авторизации и регистрации -->
@@ -68,6 +71,18 @@
 
                             </form>
 
+                            {{-- 
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Авторизация') }}</a>
+                                </li>
+                            @endif
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Регистрация') }}</a>
+                                </li>
+                            @endif --}}
+
                         @else <!-- Иначе появляется выпадающий список именем -->
 
                         @if (Auth::user()->hasRole('admin'))
@@ -101,12 +116,12 @@
                     </ul>
                 </div>
             </div>
-        </header>
+        </nav>
 
         <main>
             @yield('content')
 
-            @include('inc.footer')
+            @include('inc.footer') <!-- Вставляется блок footer -->
         </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>

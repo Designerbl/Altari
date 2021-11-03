@@ -10,6 +10,10 @@ Route::get('/', function () {// Путь к странице
     return view('index');// view('название страницы')
 }) ->name('index');// название функции по которму можно обращаться к этому обработчику
 
+Route::get('/register', function () {// Путь к странице
+    return view('register');// view('название страницы')
+}) ->name('register');
+
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
