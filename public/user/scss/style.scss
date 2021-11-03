@@ -9,6 +9,10 @@ html, body{
     font-family: 'Ubuntu', sans-serif;
 }
 
+.footer-task{
+    min-height: calc(100vh - 240px);
+}
+
 a{
     text-decoration: none;
     color: #000000;

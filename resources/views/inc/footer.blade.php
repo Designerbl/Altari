@@ -1,5 +1,5 @@
-<footer class="footer py-5 ">
-    <div class="container ">
+<footer class="footer py-5">
+    <div class="container">
         <div class="row align-items-start">
             <div class="col-12 col-lg-9 d-md-flex align-items-center">
                 <p class="logo pe-3"><span class="logo-inner">A</span>ltari</p>

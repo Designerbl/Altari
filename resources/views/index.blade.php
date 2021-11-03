@@ -31,7 +31,7 @@
                         с&nbsp;помощью популярных программ &laquo;1С&raquo;
                     </p>
                                                 
-                    <a class="btn-reg" href="{{ route('register') }}">Зарегистрироваться</a>
+                    <a class="btn-reg btn-altari" href="{{ route('register') }}">Зарегистрироваться</a>
             </div>
         </div>
 
