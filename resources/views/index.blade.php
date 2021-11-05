@@ -12,7 +12,7 @@
 
         <div class="d-none d-sm-block pb-4 pb-md-5">
             <div class="row ">
-                <div class="col col-lg-7 col-xl-6 offset-xl-2">
+                <div class="col col-lg-7 col-xl-6 offset-lg-1 offset-xl-2">
                     <h3 class="heading text-center text-lg-start"><span class="heading-inner red">Выберите</span> то,</h3>
                 </div>
             </div>
