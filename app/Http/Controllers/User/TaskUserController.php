@@ -49,15 +49,15 @@ class TaskUserController extends Controller
     public function store(Request $request)
     {
         
-        $new_usertask = new UserTask();
-        $new_usertask -> description = $request->input('description');
-        $new_usertask -> processing_status_id = 1;
-        $new_usertask -> user_id = Auth::user()->id;
-        $new_usertask -> mode_id = $request->mode_id;
+        $new_usertask = new UserTask(); 
+        $new_usertask -> description = $request->input('description'); //Ввод описания
+        $new_usertask -> processing_status_id = 1; //Выдача статуса
+        $new_usertask -> user_id = Auth::user()->id; //Вывод ID пользователя
+        $new_usertask -> mode_id = $request->mode_id; //Берется mode_id выбранный из выпадающего списка, который находится на странице создания задачи
 
        $new_usertask -> save();
 
-        return redirect()->back()->withSuccess('Готово!');
+        return redirect()->back()->withSuccess('Готово!'); //Обновляет страницу и выводит сообщение
     }
 
     /**
