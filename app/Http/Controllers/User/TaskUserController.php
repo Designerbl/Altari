@@ -55,7 +55,7 @@ class TaskUserController extends Controller
         $new_usertask -> user_id = Auth::user()->id;
         $new_usertask -> mode_id = $request->mode_id;
 
-       $new_usertask -> save();
+        $new_usertask -> save();
 
         return redirect()->back()->withSuccess('Готово!');
     }

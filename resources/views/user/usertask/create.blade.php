@@ -29,7 +29,7 @@
                         <!-- Поле наименование -->
                         <div class="form-group pb-3">
                             <label label for="exampleInputNameOption">Выбор файла для обработки</label>
-                            <input type="file" name="file" class="form-control" id="exampleInputNameOption">
+                            <input type="file" name="file" class="form-control" id="exampleInputNameOption" required>
                         </div>                        
                     </div>
 
@@ -49,7 +49,7 @@
                 <!-- Поле комментария -->
                 <div class="form-group pb-3">
                     <label label for="exampleInputNameOption">Комментарий</label>
-                    <input type="text" name="description" class="form-control" id="exampleInputNameOption" maxlength="150" placeholder="Необязательное поле"></input>
+                    <input type="text" name="description" class="form-control" id="exampleInputNameOption" maxlength="150" placeholder="Необязательное поле">
                 </div>
 
                 <!-- Кнопка добавить -->

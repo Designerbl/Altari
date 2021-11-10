@@ -87,8 +87,15 @@ class UserTaskController extends Controller
           $userTask -> processing_status_id = 2;
           $userTask -> save();  
         } else {
+
+            if($userTask -> processing_status_id == 2){
+                $userTask -> processing_status_id = 3;
+                $userTask -> save();  
+            }else{
             $userTask -> processing_status_id = 1;
-            $userTask -> save();  
+            $userTask -> save();                 
+            }
+ 
         }
         
         $userTask -> save();

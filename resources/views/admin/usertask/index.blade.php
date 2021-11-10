@@ -90,13 +90,13 @@
                                         @csrf
                                         @method('PUT')
                                         @if ($usertask['processing_status_id'] == 1)
-                                            <button class="btn btn-success btn-sm" href="#">
-                                                <i class="fas fa-check"></i>
+                                            <button class="btn btn-warning btn-sm" href="#">
+                                                <i class="fas fa-clock"></i>
                                             </button>                                            
                                         @else
-                                        <button class="btn btn-warning btn-sm" href="#">
-                                            <i class="fas fa-clock"></i>
-                                        </button> 
+                                            <button class="btn btn-warning btn-sm" href="#">
+                                                <i class="fas fa-clock"></i>
+                                            </button> 
                                         @endif
                                     </form>
 

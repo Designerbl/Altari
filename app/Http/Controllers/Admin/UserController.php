@@ -49,7 +49,7 @@ class UserController extends Controller
         $new_user = new User();
         $new_user -> name = $request->input('name');
         $new_user -> email = $request->input('email');
-        $new_user -> password =Hash::make ($request->input('password'));
+        $new_user -> password = Hash::make ($request->input('password'));
         $new_user -> save();
 
         $new_user->assignRole('user');
